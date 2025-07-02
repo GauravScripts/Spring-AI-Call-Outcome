@@ -6,7 +6,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 A modern Spring Boot service that leverages the power of Generative AI to analyze customer call notes, determine the sentiment (Positive, Negative, or Neutral), and provide a concise explanation. This service features a stateful, conversational memory for each call, allowing for context-aware follow-up analysis.
-
+![img.png](img.png)
 ## ✨ Key Features
 
 -   **Intelligent Analysis**: Uses Spring AI and an underlying Large Language Model (LLM) like OpenAI's GPT to understand the nuances of call notes.
