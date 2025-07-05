@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.spring.call_outcome.DTO.CallNotes;
 import org.spring.call_outcome.DTO.CallOutcomeResponse;
+import org.spring.call_outcome.DTO.DateCallingTool;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.messages.AssistantMessage;
 import org.springframework.ai.chat.messages.Message;
@@ -51,6 +52,7 @@ public class CallOutcomeService {
         try {
             rawResponse = chatClient.prompt()
                     .messages(history)
+                    .tools(new DateCallingTool())
                     .call()
                     .content();
 
