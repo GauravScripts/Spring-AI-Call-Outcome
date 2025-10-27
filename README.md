@@ -34,12 +34,30 @@ Follow these instructions to get the project up and running on your local machin
     cd call_outcome
     ```
 
-2.  **Configure your API Key:**
-    Open the `src/main/resources/application.properties` file and add your OpenAI API key:
-    ```properties
-    # Spring AI OpenAI Configuration
-    spring.ai.openai.api-key=YOUR_OPENAI_API_KEY
+2.  **Configure your OpenAI API Key:**
+    
+    The application requires an OpenAI API key to function. You can configure it in one of the following ways:
+    
+    **Option A: Using Environment Variable (Recommended)**
+    ```bash
+    # For macOS/Linux
+    export OPENAI_API_KEY=your-api-key-here
+    
+    # For Windows (Command Prompt)
+    set OPENAI_API_KEY=your-api-key-here
+    
+    # For Windows (PowerShell)
+    $env:OPENAI_API_KEY="your-api-key-here"
     ```
+    
+    **Option B: Direct Configuration (Not recommended for production)**
+    
+    Edit `src/main/resources/application.properties` and replace the environment variable reference:
+    ```properties
+    spring.ai.openai.api-key=your-actual-api-key-here
+    ```
+    
+    > **Note:** The `application.properties` file uses `${OPENAI_API_KEY}` to read the API key from environment variables. This is the recommended approach to keep your API key secure and out of version control.
 
 3.  **Build the project:**
     Use the Maven wrapper to build the application and install dependencies.
